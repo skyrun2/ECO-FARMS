@@ -10,7 +10,7 @@ const SvgWheat = (props: SVGProps<SVGSVGElement>) => (
     strokeLinecap="round"
     strokeLinejoin="round"
     strokeWidth={2}
-    className="wheat_svg__lucide wheat_svg__lucide-wheat-icon wheat_svg__lucide-wheat"
+    className="w-6 h-6"
     viewBox="0 0 24 24"
     {...props}
   >

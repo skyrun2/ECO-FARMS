@@ -6,6 +6,7 @@ const SvgTele = (props: SVGProps<SVGSVGElement>) => (
     viewBox="0 0 16 16"
     width="1em"
     height="1em"
+    className="w-6 h-6"
     {...props}
   >
     <path

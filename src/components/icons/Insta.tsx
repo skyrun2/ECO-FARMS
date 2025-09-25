@@ -7,6 +7,7 @@ const SvgInsta = (props: SVGProps<SVGSVGElement>) => (
     viewBox="0 0 24 24"
     width="1em"
     height="1em"
+    className="w-6 h-6"
     {...props}
   >
     <g fill="#0F0F0F">
