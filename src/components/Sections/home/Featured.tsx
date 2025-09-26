@@ -59,7 +59,7 @@ export const FeaturedProduct = ({productCard}:FeaturedProductProps) =>{
                 "pt-[3rem]  grid  grid-cols-4 gap-[2rem] mb-12 scroll-eco-green",    
                 "max-big-lg:grid-cols-2  max-big-lg:place-items-center max-big-lg:w-[35rem] ",
                 "max-mid-mg:grid  max-mid-mg:gap-8 max-mid-mg:[grid-template-columns:repeat(4,minmax(16.125rem,1fr))] max-mid-mg:overflow-scroll",
-                "max-sm-sm:px-[2rem] max-sm-sm:pb-[1rem] ",
+                "max-sm-sm:px-[4rem] max-sm-sm:pb-[2rem] ",
                 
             )}>
                 {productCard.map((e,i)=>{                    
