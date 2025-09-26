@@ -56,14 +56,13 @@ export const FeaturedProduct = ({productCard}:FeaturedProductProps) =>{
             <p className="text-center text-[2.25rem] font-[800]">Featured Products</p>
             <p className=" text-center text-sec-grey text-[1.125rem]">Discover our most popular products trusted by farmers and agricultural businesses.</p>
             <div className={clsx(
-                "pt-[3rem]  grid  grid-cols-4 gap-[2rem] mb-12",                
+                "pt-[3rem]  grid  grid-cols-4 gap-[2rem] mb-12 scroll-eco-green",    
                 "max-big-lg:grid-cols-2  max-big-lg:place-items-center max-big-lg:w-[35rem] ",
-                "   max-mid-mg:grid  max-mid-mg:gap-8 max-mid-mg:[grid-template-columns:repeat(4,minmax(16.125rem,1fr))] max-mid-mg:overflow-scroll"  
+                "max-mid-mg:grid  max-mid-mg:gap-8 max-mid-mg:[grid-template-columns:repeat(4,minmax(16.125rem,1fr))] max-mid-mg:overflow-scroll",
+                "max-sm-sm:px-[2rem] max-sm-sm:pb-[1rem] ",
                 
             )}>
-                {productCard.map((e,i)=>{
-                    console.log(e.tag);
-                    
+                {productCard.map((e,i)=>{                    
                     return(
                         <Card key={i} className={clsx(
                             "pt-0 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1",

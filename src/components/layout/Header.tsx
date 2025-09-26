@@ -3,11 +3,11 @@
 import Link from "next/link";
 import { LogoLink } from "../atoms/LogoLink";
 import { Button } from "../ui/button";
-import { Clock, HamburgerIcon, LucideProps, Menu, X } from "lucide-react";
+import {LucideProps, Menu, X } from "lucide-react";
 import Favourite from "../icons/Favourite";
 import clsx from "clsx";
 import { useState } from "react";
-import { Cancel, Hamburger } from "../icons/index";
+
 
 
 
@@ -30,7 +30,7 @@ const Header = () =>{
                             " flex justify-between items-center  space-x-[2rem]",
                             "max-mb-nav:hidden"
                         )}>
-                            <HeaderLink href="" text="Home" className=" "/>
+                            <HeaderLink href="" text="Home" className=" bg-eco-brown"/>
                             <HeaderLink href="" text="Products"/>
                             <HeaderLink href="" text="About"/>
                             <HeaderLink href="" text="Contact"/>
@@ -52,7 +52,7 @@ const Header = () =>{
                         "hidden",
                         isOpen &&  "max-mb-nav:flex max-mb-nav:flex-col "
                     )}>
-                        <HeaderLink href="" text="Home" className="" isOpen={isOpen}/>
+                        <HeaderLink href="" text="Home" className="bg-eco-brown" isOpen={isOpen}/>
                         <HeaderLink href="" text="Products" isOpen={isOpen}/>
                         <HeaderLink href="" text="About" isOpen={isOpen}/>
                         <HeaderLink href="" text="Contact" isOpen={isOpen}/>
@@ -79,7 +79,7 @@ const HeaderLink = ({text,href,Icon, className="",isOpen} : HeaderLinkProps) =>{
             
             <Link href={href}>
                 <Button className={clsx(
-                    "hover:bg-hover-green cursor-pointer text-[0.875rem] shadow-none space-x-1 px-3 py-2 rounded-md text-sm font-medium ",
+                    "hover:bg-hover-green  cursor-pointer text-[0.875rem] shadow-none space-x-1 px-3 py-2 rounded-md text-sm font-medium ",
                     Icon && "flex items-center",
                     isOpen && "max-mb-nav:w-full",
                     className

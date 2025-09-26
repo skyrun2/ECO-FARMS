@@ -1,10 +1,5 @@
 import Link from "next/link";
-import { LogoLink } from "../atoms/LogoLink";
-import Logo from "../icons/logo";
-
-
-import {Tele, Mail, Whatsapp, Wheat } from "../icons/index";
-import { title } from "process";
+import {Tele, Whatsapp, Wheat } from "../icons/index";
 import { Contact } from "lucide-react";
 import { SVGProps } from "react";
 import clsx from "clsx";

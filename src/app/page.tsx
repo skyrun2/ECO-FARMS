@@ -1,12 +1,12 @@
 import Eggs from "@/components/icons/Egg";
 import Fishs from "@/components/icons/Fish";
 import Steak from "@/components/icons/Steak";
-import MainLayout from "@/components/layout/MainLayout";
+
 import { Cat, Categories } from "@/components/Sections/home/Categories";
 import { FeaturedProduct, product } from "@/components/Sections/home/Featured";
 import { Hero } from "@/components/Sections/home/Hero";
 import { Wheat } from "lucide-react";
-import Image from "next/image";
+
 
 
 const catsContent: Cat[] = [
@@ -65,7 +65,7 @@ const demoFeatured : product[]= [
 ]
 export default function Home() {
   return (
-    <div className="">      
+    <div className="overflow-hidden">      
         <Hero/>    
         <Categories items={catsContent}/>
         <FeaturedProduct productCard={demoFeatured}/>
