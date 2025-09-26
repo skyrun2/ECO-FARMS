@@ -59,15 +59,16 @@ export const FeaturedProduct = ({productCard}:FeaturedProductProps) =>{
                 "pt-[3rem]  grid  grid-cols-4 gap-[2rem] mb-12 scroll-eco-green",    
                 "max-big-lg:grid-cols-2  max-big-lg:place-items-center max-big-lg:w-[35rem] ",
                 "max-mid-mg:grid  max-mid-mg:gap-8 max-mid-mg:[grid-template-columns:repeat(4,minmax(16.125rem,1fr))] max-mid-mg:overflow-scroll",
-                "max-sm-sm:px-[4rem] max-sm-sm:pb-[2rem] ",
+                "max-sm-sm:px-[8rem] max-sm-sm:pb-[2rem] max-sm-sm:[grid-template-columns:repeat(4,12.125rem)] max-sm-sm:auto-cols-[12.125rem] max-sm-sm:overflow-x-auto",
+                // "max-sm-sm:flex max-sm-sm:grid-cols-none"
                 
             )}>
                 {productCard.map((e,i)=>{                    
                     return(
                         <Card key={i} className={clsx(
                             "pt-0 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1",
-                            "max-big-lg:w-[16.125rem]",
-                            
+                            "max-big-lg:w-[16.125rem]",                                                        
+                            // "max-sm-sm:w-12.125rem "
                         )}>
                             <div className="relative w-full aspect-[1.375/1] ">
                             <Image src={e.image} alt="" fill  className="w-full h-full object-cover"/>
