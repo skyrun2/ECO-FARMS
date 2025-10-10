@@ -16,7 +16,7 @@ export const ProductCard = ({prod,className}:ProductCardProps) =>{
         <Card  className={clsx(
             "pt-0 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 ",
             "max-big-lg:w-[13.125rem]",
-            "max-sm-sm:h-fit max-sm-sm:w-[6.7rem]",
+            // "max-sm-sm:h-fit max-sm-sm:w-[6.7rem]",
             className,
             
         )}>
@@ -31,12 +31,12 @@ export const ProductCard = ({prod,className}:ProductCardProps) =>{
                 "py-[0] px-[1.5rem] ",
                 "max-sm:px-[0.5rem]"
             )}> 
-            <p className="text-eco-brown font-[800] text-[1rem] text-nowrap text-ellipsis">{prod.title}</p>
+            <p className="text-left text-eco-brown font-[800] text-[1rem] ">{prod.title}</p>
             <div className={clsx(
                 " w-full flex items-baseline justify-between",
                 "max-sm-sm:flex-col max-sm-sm:gap-[0.5rem] max-sm-sm:pb-[0.6rem]"
             )}>
-                <p className="text-pri-green font-[800] text-[1.2rem] text-nowrap text-ellipsis">${prod.price}</p>
+                <p className="text-pri-green font-[800] text-[1.2rem] ">${prod.price}</p>
                 <p className="px-[.5rem] text-[0.875rem] bg-off-white text-tetirary-grey rounded-full text-nowrap text-ellipsis">{prod.tag }</p>
             </div>
             </div>

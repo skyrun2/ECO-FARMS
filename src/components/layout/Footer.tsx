@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {Tele, Whatsapp, Wheat } from "../icons/index";
-import { Contact } from "lucide-react";
+
 import { SVGProps } from "react";
 import clsx from "clsx";
 
