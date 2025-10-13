@@ -62,7 +62,7 @@ const Cats = ({prods}:CatsProp) =>{
 }
 
 type ProdsListProps = CatsProp &{};
-const ProdsList = ( {prods} : ProdsListProps) =>{
+export const ProdsList = ( {prods} : ProdsListProps) =>{
   return(
     <div
      className={clsx(
