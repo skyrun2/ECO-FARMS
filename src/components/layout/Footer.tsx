@@ -4,8 +4,8 @@ import {Tele, Whatsapp, Wheat } from "../icons/index";
 import { SVGProps } from "react";
 import clsx from "clsx";
 
-type HrefsTypes  = "tele"|"whatsapp" | "mail";
-type Contact = {
+export type HrefsTypes  = "tele"|"whatsapp" | "mail";
+export type Contact = {
     icon : React.FC<SVGProps<SVGSVGElement>>;
     contact:string;
     type : HrefsTypes;
@@ -19,10 +19,7 @@ type FooterDetails = {
     contacts: Contact[];
     cc:string;
 }
-const footerDetails : FooterDetails = {
-    title: "ECO-FARMS",
-    desc:"Your trusted partner for quality livestock feeds, fresh meat, and seafood. Serving the agricultural community with premium products.",
-    contacts:[
+export const contacts : Contact[] = [
 
         {
             icon: Tele,
@@ -44,7 +41,11 @@ const footerDetails : FooterDetails = {
             type:"whatsapp",
             href:"//wa.me/2348039698827",
         },
-    ],
+    ];
+const footerDetails : FooterDetails = {
+    title: "ECO-FARMS",
+    desc:"Your trusted partner for quality livestock feeds, fresh meat, and seafood. Serving the agricultural community with premium products.",
+    contacts: contacts,
     cc:" 2025 ECO-FARMS. All rights reserved. | created by skyrun"
 
 }
@@ -91,10 +92,10 @@ const Footer = () =>{
 }
 
 
-type ContactListProps = {
+export type ContactListProps = {
     contacts:Contact[]
 }
-const ContactList = ({contacts}:ContactListProps) =>{
+export const ContactList = ({contacts}:ContactListProps) =>{
     
     return(
         <ul className=" f-contacts space-y-[1rem]">
