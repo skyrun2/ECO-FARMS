@@ -1,3 +1,5 @@
+'use client'
+
 import Eggs from "@/components/icons/Egg";
 import Fishs from "@/components/icons/Fish";
 import Steak from "@/components/icons/Steak";
@@ -39,34 +41,36 @@ const demoFeatured : product[]= [
         price:45.99,
         image:"https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=400",
         tag: "Livestock Feeds",
-        isFavourite:false,
+        
     },
     {
         title:"Fresh Angus Beef",
         price:189.99,
         image:"https://images.pexels.com/photos/65175/pexels-photo-65175.jpeg?auto=compress&cs=tinysrgb&w=400",
         tag: "Livestock Feeds",
-        isFavourite:false,
+        
     },
     {
         title:"Atlantic Salmon",
         price:24.99,
         image:"https://images.pexels.com/photos/725997/pexels-photo-725997.jpeg?auto=compress&cs=tinysrgb&w=400",
         tag: "Livestock Feeds",
-        isFavourite:false,
+        
     },
     {
         title:"Free-Range Chickens",
         price:89.99,
         image:"https://images.pexels.com/photos/1300510/pexels-photo-1300510.jpeg?auto=compress&cs=tinysrgb&w=400",
         tag: "Livestock Feeds",
-        isFavourite:false,
+        
     },
 ]
 export default function Home() {
+  console.log("home");
+  
   return (
     <div className="overflow-hidden">      
-        <Hero/>    
+        <Hero/>
         <Categories items={catsContent}/>
         <FeaturedProduct productCard={demoFeatured}/>
      </div>

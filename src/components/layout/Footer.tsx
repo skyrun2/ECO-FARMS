@@ -53,6 +53,8 @@ const footerDetails : FooterDetails = {
 }
 export {Footer};
 const Footer = () =>{
+    
+    
     return(
         <div className="w-full h-fit bg-eco-brown flex items-center justify-center">
             <div className={clsx(

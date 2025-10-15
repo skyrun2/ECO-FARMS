@@ -1,14 +1,15 @@
 "use client";
 
-import type { Products } from "@/lib/handleProd";
+
 import { Card } from "../ui/card";
 import clsx from "clsx";
 import Favourite from "../icons/Favourite";
 import Image from "next/image";
+import { Product } from "@/lib/types";
 
 // export const FeaturedProduct = ({productCard}:FeaturedProductProps) =>{
 type ProductCardProps = {
-    prod : Products;
+    prod : Product;
     className?: string;
 }
 export const ProductCard = ({prod,className}:ProductCardProps) =>{
@@ -31,7 +32,11 @@ export const ProductCard = ({prod,className}:ProductCardProps) =>{
                 "py-[0] px-[1.5rem] ",
                 "max-sm:px-[0.5rem]"
             )}> 
-            <p className="text-left text-eco-brown font-[800] text-[1rem] ">{prod.title}</p>
+            <p className={clsx(
+                "text-left text-eco-brown font-[800] text-[1rem]  ",
+                "whitespace-nowrap overflow-hidden text-ellipsis [mask-image:linear-gradient(to_right,black_80%,transparent)]"
+
+            )}>{prod.title}</p>
             <div className={clsx(
                 " w-full flex items-baseline justify-between",
                 "max-sm-sm:flex-col max-sm-sm:gap-[0.5rem] max-sm-sm:pb-[0.6rem]"

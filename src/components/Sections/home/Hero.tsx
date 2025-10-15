@@ -1,6 +1,7 @@
 import RightArrow from "@/components/icons/RightArrow"
 import { Button } from "@/components/ui/button"
 import clsx from "clsx"
+import Link from "next/link"
 
 const heroContent = {
     title:"ECO FARMS",
@@ -30,10 +31,15 @@ export const Hero = ()=>{
                     "max-w-[48rem] mx-auto mb-[2rem] text-center text-[1.15rem] font-normal opacity-90",
                     "max-md:text-[1.25rem]"
                 )}>{heroContent.desc}</p>
-                <Button className=" h-[3.5rem] w-[15rem] bg-eco-yellow hover:bg-hv-eco-yellow text-sec-color text-[1.125rem] font-[800] ">
-                    <p>Shop Product</p>
-                    <RightArrow/>
-                </Button>
+                
+                    <Link href="/Products" className=" ">
+                        <Button className=" h-[3.5rem] w-[15rem] bg-eco-yellow hover:bg-hv-eco-yellow text-sec-color text-[1.125rem] font-[800] cursor-pointer" >
+                            <p>Shop Product</p>
+                            <RightArrow/>
+                        </Button>
+                    </Link>
+                    
+                
             </div>
         </section>
     )

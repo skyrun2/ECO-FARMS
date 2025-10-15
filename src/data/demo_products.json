@@ -1,0 +1,109 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Premium Cattle Feed",
+      "price": 45.99,
+      "image": "https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "tag": "Livestock Feeds"
+    },
+    {
+      "id": 2,
+      "title": "Poultry Starter Feed",
+      "price": 32.5,
+      "image": "https://images.pexels.com/photos/1300510/pexels-photo-1300510.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "tag": "Livestock Feeds"
+    },
+    {
+      "id": 3,
+      "title": "Fresh Angus Beef",
+      "price": 189.9,
+      "image": "https://images.pexels.com/photos/65175/pexels-photo-65175.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "tag": "Frozen Meats"
+    },
+    {
+      "id": 4,
+      "title": "Atlantic Salmon Fillet",
+      "price": 24.9,
+      "image": "https://images.pexels.com/photos/725997/pexels-photo-725997.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "tag": "Fish & seafood"
+    },
+    {
+      "id": 5,
+      "title": "Holstein Dairy Cow",
+      "price": 1224.9,
+      "image": "https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "tag": "Livestock"
+    },
+    {
+      "id": 6,
+      "title": "Free-Range Chickens",
+      "price": 89.9,
+      "image": "https://images.pexels.com/photos/1300510/pexels-photo-1300510.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "tag": "Livestock"
+    },
+    {
+      "id": 7,
+      "title": "Fresh Pork Tenderloin",
+      "price": 19.9,
+      "image": "https://images.pexels.com/photos/618775/pexels-photo-618775.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "tag": "Frozen Meats"
+    },
+    {
+      "id": 8,
+      "title": "Maine Lobster",
+      "price": 39.99,
+      "image": "https://images.pexels.com/photos/566345/pexels-photo-566345.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "tag": "Fish & seafood"
+    },
+    {
+      "id": 9,
+      "title": "Poultry Starter Feed",
+      "price": 32.5,
+      "image": "https://images.pexels.com/photos/1300510/pexels-photo-1300510.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "tag": "Livestock Feeds"
+    },
+    {
+      "id": 10,
+      "title": "Fresh Angus Beef",
+      "price": 189.9,
+      "image": "https://images.pexels.com/photos/65175/pexels-photo-65175.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "tag": "Frozen Meats"
+    },
+    {
+      "id": 11,
+      "title": "Atlantic Salmon Fillet",
+      "price": 24.9,
+      "image": "https://images.pexels.com/photos/725997/pexels-photo-725997.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "tag": "Fish & seafood"
+    },
+    {
+      "id": 12,
+      "title": "Holstein Dairy Cow",
+      "price": 1224.9,
+      "image": "https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "tag": "Livestock"
+    },
+    {
+      "id": 13,
+      "title": "Free-Range Chickens",
+      "price": 89.9,
+      "image": "https://images.pexels.com/photos/1300510/pexels-photo-1300510.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "tag": "Livestock"
+    },
+    {
+      "id": 14,
+      "title": "Fresh Pork Tenderloin",
+      "price": 19.9,
+      "image": "https://images.pexels.com/photos/618775/pexels-photo-618775.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "tag": "Frozen Meats"
+    },
+    {
+      "id": 15,
+      "title": "Maine Lobster",
+      "price": 39.99,
+      "image": "https://images.pexels.com/photos/566345/pexels-photo-566345.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "tag": "Fish & seafood"
+    }
+  ]
+}

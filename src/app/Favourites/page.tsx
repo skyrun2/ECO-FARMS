@@ -1,11 +1,14 @@
+import { ProdsList } from "@/components/general/PodsList";
 import { Button } from "@/components/ui/button"
-import { Products, readProd } from "@/lib/handleProd";
+
 import clsx from "clsx"
 import { Heart, ShoppingBag } from "lucide-react"
-import { ProdsList } from "../Products/page";
+
 
 export default function Favorite(){
-      const prods : Products[]= readProd().products;
+    
+    console.log("hey");
+    
     return(
         <section className={clsx(
             " py-24 mx-auto sm:px-6 px-8 max-w-7xl  ",
@@ -23,7 +26,7 @@ export default function Favorite(){
                 <p className="mx-auto max-w-3xl text-[1.125rem] text-gray-600">Keep track of products you&apos;re interested in. Save items to easily find them later.</p>                
             </div>
             {/* <EmptyState/> */}
-            {/* <ProdsList prods={prods}/> */}
+            <ProdsList />
 
         </section>
     )

@@ -1,12 +1,20 @@
-import { ProductCard } from "@/components/atoms/productCard";
+
+import { ProdsList } from "@/components/general/PodsList";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { readProd } from "@/lib/handleProd";
-import type { Products } from "@/lib/handleProd";
+import { Product } from "@/lib/types";
+
+
+
 import clsx from "clsx";
 
-export default function Products() {
-  const prods : Products[]= readProd().products;
+
+export default async function Products() {
+  // const res = await fetch('/api/products')
+  // const prods :Product[] = await  res.json();
+   
+  
+  
+  
   return (
     <div className={clsx(
       "max-w-[80rem] mx-auto px-8 py-[6rem] text-center ",
@@ -18,9 +26,9 @@ export default function Products() {
           <p className="mx-auto max-w-3xl text-[1.125rem] text-gray-600 ">Browse our comprehensive selection of agricultural products designed to meet all your farming needs.</p>
         </div>
         <div className="w-full flex flex-col items-center justify-center">
-          <p className="w-full mb-[1.5rem] text-[1.125rem] text-eco-brown text-left font-extrabold">{prods.length} Products Found</p>        
-            {prods && <Cats  prods={prods}/> }
-            {prods && <ProdsList prods={prods}/>}
+          {/* <p className="w-full mb-[1.5rem] text-[1.125rem] text-eco-brown text-left font-extrabold">{prods.length} Products Found</p>         */}
+            {/* {prods && <Cats  prods={prods}/> } */}
+            {<ProdsList useFor="products" />}
         </div>
      </div>
   );
@@ -28,7 +36,7 @@ export default function Products() {
 
 // const HeaderLinks = ({className="",isOpen} : HeaderLinkProps) =>{
 type CatsProp = {
-  prods:Products[];
+  prods:Product[];
 }
 
 const Cats = ({prods}:CatsProp) =>{
@@ -61,34 +69,7 @@ const Cats = ({prods}:CatsProp) =>{
   )
 }
 
-type ProdsListProps = CatsProp &{};
-export const ProdsList = ( {prods} : ProdsListProps) =>{
-  return(
-    <div
-     className={clsx(
-      // "mt-[2rem] flex flex-wrap items-center justify-center gap-[2rem]"
-      " mt-[2rem] w-full grid [grid-template-columns:repeat(auto-fit,minmax(12rem,1fr))] gap-[1.5rem] justify-start items-start box-border",
-      "max-sm-sm:[grid-template-columns:repeat(auto-fit,minmax(10rem,1fr))]",
-      "max-[24.65rem]:[grid-template-columns:repeat(2,minmax(10rem,1fr))] gap-[0rem] place-items-start"
-      // "max-[28.75rem]:"
-      // "prods-list bg-fuchsia"
-  )}
-  // className="prods-list"
-  >
-      {prods.map((prod,i)=>{
-        return(
-          <ProductCard key={i} prod={prod} className={clsx(
-            " w-full h-fit",
-            "max-sm-sm:w-[13rem]",
-            "max-[28.75rem]:w-[11rem]",
-            "max-[24.65rem]:w-[9rem]"
-            // "prod"
-          )}/>
-        )
-      })}
-    </div>
-  )
-}
+
 
 
  
