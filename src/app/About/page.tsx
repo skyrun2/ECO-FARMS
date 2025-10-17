@@ -2,9 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import clsx from "clsx";
-import { Award, Badge, Leaf, LucideIcon, LucideProps, Target, Users } from "lucide-react"
+import { Award, Leaf, LucideIcon, Target, Users } from "lucide-react"
 import Image from "next/image";
-import { ComponentType, ReactNode, SVGProps } from "react";
 export type Value = {
     title:string
     desc:string;    

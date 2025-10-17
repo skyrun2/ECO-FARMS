@@ -1,5 +1,7 @@
-import { ProdsList } from "@/components/general/PodsList";
+'use client'
+import { ProductCard } from "@/components/atoms/productCard";
 import { Button } from "@/components/ui/button"
+import { useUserStore } from "@/lib/useUserStore";
 
 import clsx from "clsx"
 import { Heart, ShoppingBag } from "lucide-react"
@@ -7,7 +9,7 @@ import { Heart, ShoppingBag } from "lucide-react"
 
 export default function Favorite(){
     
-    console.log("hey");
+    const favProds = useUserStore((state)=>state.favProds);
     
     return(
         <section className={clsx(
@@ -25,8 +27,33 @@ export default function Favorite(){
                 </div>
                 <p className="mx-auto max-w-3xl text-[1.125rem] text-gray-600">Keep track of products you&apos;re interested in. Save items to easily find them later.</p>                
             </div>
-            {/* <EmptyState/> */}
-            <ProdsList />
+            {
+                favProds.length ? 
+                    <div
+                         className={clsx(      
+                          " mt-[2rem] w-full grid [grid-template-columns:repeat(auto-fit,minmax(12rem,1fr))] gap-[1.5rem] justify-start items-start box-border",
+                          "max-sm-sm:[grid-template-columns:repeat(auto-fit,minmax(10rem,1fr))]",
+                          "max-[24.65rem]:[grid-template-columns:repeat(2,minmax(10rem,1fr))] gap-[0rem] place-items-start"      
+                      )}>
+                        {favProds.map(e=>{
+                        return(
+                            <ProductCard key={e.id} prod={e}
+                            className={clsx(
+                                        " w-full h-fit",
+                                        "max-sm-sm:w-[13rem]",
+                                        "max-[28.75rem]:w-[11rem]",
+                                        "max-[24.65rem]:w-[9rem]"
+                                        // "prod"
+                                      )}/>
+                            
+                        )
+                    })}
+                    </div>
+                    
+                : <EmptyState/>
+            }
+            
+            
 
         </section>
     )

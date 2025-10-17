@@ -1,7 +1,8 @@
 'use client'
 
 import { create } from "zustand";
-import { Product } from "./handleProd"
+import { Product } from "./types";
+
 
 interface UserStore {
     favProds:Product[]
@@ -18,17 +19,21 @@ const defaultState : Omit<UserStore,'actions'> ={
 export const useUserStore = create<UserStore>()((set,get) => ({
     ...defaultState,
     actions:{
-        makeFav: function (prod: Product): void {
+        makeFav: function (prod): void {
             const updatedFavProds = [...get().favProds];
             updatedFavProds.push(prod);
+            console.log({"added":updatedFavProds});
+            
             set({
-                favProds : [...updatedFavProds],
+                favProds : updatedFavProds,
             })
         },
-        removeFav: function (prod:Product):void {
-            const updatedFavProds = [];
-            get().favProds.filter(e =>{
-                if (e !== prod) updatedFavProds.push(e);
+        removeFav: function (prod):void {
+            const updatedFavProds = get().favProds.filter(e=> e!=prod );
+            console.log({"rem":updatedFavProds});
+            
+            set({
+                favProds : [...updatedFavProds],
             })
         },
         // getLocalStorage(){

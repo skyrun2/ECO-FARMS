@@ -90,7 +90,6 @@ export interface HeaderLinkProps {
 }
 const HeaderLinks = ({className="",isOpen} : HeaderLinkProps) =>{
         const pathname = usePathname();
-        console.log(pathname == "/");
         
         
                 
@@ -100,12 +99,7 @@ const HeaderLinks = ({className="",isOpen} : HeaderLinkProps) =>{
                 navLinks.map((e,i)=>{
                     const href = "/"+e.link;
                     let isCurrPage = false;
-                    isCurrPage = pathname == href ? true :false;
-                    if (href == "/") {
-                        console.log({isOpen,pathname,href});
-                        
-                    }
-                    
+                    isCurrPage = pathname == href ? true :false;                    
                     return(
                         <Link key={i} href={href}>
                             <Button className={clsx(

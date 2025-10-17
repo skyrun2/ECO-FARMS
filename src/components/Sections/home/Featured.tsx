@@ -4,12 +4,16 @@
 import { ProdsList } from "@/components/general/PodsList";
 import RightArrow from "@/components/icons/RightArrow";
 import { Button } from "@/components/ui/button";
+import { Product } from "@/lib/types";
 
 
 import { useUserStore } from "@/lib/useUserStore";
+import { getProds } from "@/utils/handleProds";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+
 
 export type product = {
     title:string;
@@ -24,11 +28,20 @@ export type FeaturedProductProps = {
     products:product[];
 }
 
-export  const FeaturedProduct =  () =>{
+export  const FeaturedProduct =  () =>{        
+    const [prods,setProds] = useState<Product[]>([]);
+      const [loading, setLoading] = useState(true);
     
-    const makeFav = useUserStore((state)=>state.actions.makeFav);
-    const removeFav = useUserStore((state)=>state.actions.removeFav);
-    const favProds = useUserStore((state)=>state.favProds);
+      useEffect(()=>{
+        getProds()
+        .then((data)=>setProds(data))
+        .catch((err)=> console.error(err))
+        .finally(()=>setLoading(false));
+      },[])
+      if (loading) return <p>loading...</p>;
+      
+    
+      
     return(
         <section id="Featured"  className={clsx(
             "py-24  px-8 max-w-7xl mx-auto bg-light text-eco-brown flex flex-col justify-center items-center",
@@ -36,7 +49,7 @@ export  const FeaturedProduct =  () =>{
             "max-sm:px-6")}>
             <p className="text-center text-[2.25rem] font-[800]">Featured Products</p>
             <p className=" text-center text-sec-grey text-[1.125rem]">Discover our most popular products trusted by farmers and agricultural businesses.</p>
-            <ProdsList useFor="fav"/>
+            <ProdsList prods={prods}/>
             <div className="w-full flex  justify-center">
                 <Link href="/Products">
                         <Button className="mt-[2rem] h-[3.75rem] w-[15.2rem] bg-pri-green hover:bg-hover-green cursor-pointer  font-[800] rounded-[.5rem] text-off-white ">

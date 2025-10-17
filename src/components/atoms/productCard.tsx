@@ -3,16 +3,49 @@
 
 import { Card } from "../ui/card";
 import clsx from "clsx";
-import Favourite from "../icons/Favourite";
 import Image from "next/image";
-import { Product } from "@/lib/types";
+import { iClick, Product } from "@/lib/types";
+import { useUserStore } from "@/lib/useUserStore";
+import { Heart } from "lucide-react";
+import { useEffect, useState } from "react";
 
 // export const FeaturedProduct = ({productCard}:FeaturedProductProps) =>{
 type ProductCardProps = {
     prod : Product;
     className?: string;
 }
+type HandleFav ={
+    prod: Product;    
+    e:iClick;
+
+}
+
+
 export const ProductCard = ({prod,className}:ProductCardProps) =>{
+    const makeFav = useUserStore((state)=>state.actions.makeFav);
+    const removeFav = useUserStore((state)=>state.actions.removeFav);
+    
+    const favProds = useUserStore((state)=>state.favProds);
+    const [isFav,setFav] = useState(false);        
+    
+    const handleFav = ({prod,e}:HandleFav)=>{
+        if (isFav) {
+            removeFav(prod);
+            setFav(false);
+        }
+        else{
+            makeFav(prod);
+            setFav(true);
+        }
+    }
+
+
+    useEffect(()=>{            
+        if(favProds.length){
+            favProds.forEach(e=> e.id == prod.id ? setFav(true) :null)
+        }
+    },[])
+    
     return(
         <Card  className={clsx(
             "pt-0 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 ",
@@ -22,10 +55,12 @@ export const ProductCard = ({prod,className}:ProductCardProps) =>{
             
         )}>
             <div className="relative w-full aspect-[1.375/1] ">
-            <Image src={prod.image} alt="" fill  className="w-full h-full object-cover"/>
+            <Image src={prod.image} alt="" fill  className="w-full h-full object-cover" sizes="100%"/>
             <span 
-            className=" absolute top-[0.75rem] right-[0.75rem]  rounded-[100%] aspect-square w-[2.25rem] bg-light text-eco-grey hover:text-hover-green  flex items-center justify-center cursor-pointer">
-                <Favourite/>
+            className="absolute top-[0.75rem] right-[0.75rem]  rounded-[100%] aspect-square w-[2.25rem] bg-light text-eco-grey hover:text-hover-green  flex items-center justify-center cursor-pointer"
+            onClick={(e)=>handleFav({prod,e})}
+            >        
+                <Heart className={isFav? "fill-pri-green text-pri-green":""}/>
             </span>
             </div >
             <div className={clsx(
