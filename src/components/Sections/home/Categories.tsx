@@ -1,9 +1,7 @@
-import Eggs from "@/components/icons/Egg";
-import Fishs from "@/components/icons/Fish";
-import Steak from "@/components/icons/Steak";
-import { Card } from "@/components/ui/card"
+
+import { Card, CardDescription, CardTitle } from "@/components/ui/card"
 import clsx from "clsx";
-import { Wheat } from "lucide-react";
+
 import { ReactNode } from "react";
 
 
@@ -19,29 +17,40 @@ export type CategoriesProp = {
 export const Categories = ({items}:CategoriesProp)=>{
     return(
         <section id="cats" className={clsx(
-                    "py-24  px-8 max-w-7xl mx-auto bg-light text-eco-brown flex flex-col justify-center items-center",
+                    "py-24  px-4 w-full mx-auto bg-white text-eco-brown flex flex-col justify-center items-center",
                     "max-md:py-16 max-md:px-4",
-                    "max-sm:px-6")}>
-            <h1 className=" font-[800] text-[1.875rem] text-center text-sec-color ">Our Product Categories</h1>
-            <p className="max-w-[48rem] mx-auto  text-center text-sec-grey text-[1.125rem]">From livestock feeds to fresh seafood, we provide everything you need for successful agricultural operations.</p>
+                    "max-sm:px-4")}>
+            <h1 className={clsx(
+                "font-[700]  text-center text-eco-brown text-lg-head",
+                "max-md:text-sm-head"
+            )}>Our Product Categories</h1>
+            <p className={clsx(
+                "w-full mx-auto  text-center text-sec-grey text-lg-desc",
+                "max-md:text-sm-desc"
+            )}>From livestock feeds to fresh seafood, we provide everything you need for successful agricultural operations.</p>
             <div className={clsx(
                             "pt-[3rem]  grid  grid-cols-4 gap-[2rem] mb-12 ", 
-                            "max-big-lg:grid-cols-2  max-big-lg:place-items-center max-big-lg:w-[35rem] ",
-                            "max-mid-mg:grid  max-mid-mg:gap-8 max-mid-mg:[grid-template-columns:repeat(4,minmax(16.125rem,1fr))] max-mid-mg:overflow-scroll",  
-                            "  max-sm-sm:w-full max-sm-sm:px-[2rem] max-sm-sm:pb-[2rem] max-sm-sm:[grid-template-columns:repeat(4,minmax(12.125rem))] max-sm-sm:auto-cols-[12.125rem] max-sm-sm:overflow-x-auto max-sm-sm:gap-2rem",
+                            "max-lg:grid-cols-2   max-blg:w-[35rem] ",                            
+                            "max-mid-mg:flex flex-col ",  
+                            // "  max-sm-sm:w-full max-sm-sm:px-[2rem] max-sm-sm:pb-[2rem] max-sm-sm:[grid-template-columns:repeat(4,minmax(12.125rem))] max-sm-sm:auto-cols-[12.125rem] ",
                             
                             
                         )}>
             {items.map((e,i)=>{
                 return(
-                 <Card key={i} className=" p-[2rem] h-[15.125rem] flex flex-col justify-center items-center text-[1.25rem] text-eco-brown font-[800]">
+                 <Card key={i} className={clsx(
+                    " px-4 rounded-xl shadow-lg   h-[15.125rem]  flex flex-col justify-center items-center",
+                    "max-md:w-[12rem]",
+                    "max-sm:w-[15rem]",
+                    // " max-md:w-[20rem]"
+                 )}>
                     <span className={clsx("rounded-[100%] aspect-square w-[4rem] flex items-center justify-center text-light",
                             i%2 ? "bg-eco-brown"  : "bg-pri-green",
                     )}>
                        {e.icon} 
                     </span>
-                    <p>{e.title}</p>
-                    <p className="text-sec-grey text-[1rem] font-normal">{e.desc}</p>
+                    <CardTitle className="text-lg-head text-eco-brown  font-bold">{e.title}</CardTitle>
+                    <CardDescription className="w-full text-lg-desc text-sec-grey text-center  font-normal">{e.desc}</CardDescription>
                  </Card>   
                 )
             })}

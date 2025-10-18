@@ -48,8 +48,9 @@ export const ProductCard = ({prod,className}:ProductCardProps) =>{
     
     return(
         <Card  className={clsx(
-            "pt-0 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 ",
-            "max-big-lg:w-[13.125rem]",
+            "pt-0 pb-3 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 ",
+            "w-[15.125rem] shrink-0",
+            "max-sm:w-[20rem] gap-4 ",
             // "max-sm-sm:h-fit max-sm-sm:w-[6.7rem]",
             className,
             
@@ -62,23 +63,19 @@ export const ProductCard = ({prod,className}:ProductCardProps) =>{
             >        
                 <Heart className={isFav? "fill-pri-green text-pri-green":""}/>
             </span>
+            <p className="absolute top-[0.75rem] left-[0.5rem] px-[.5rem] text-lg-desc bg-off-white text-gray-600 rounded-full text-nowrap text-ellipsis">{prod.tag }</p>
             </div >
             <div className={clsx(
-                "py-[0] px-[1.5rem] ",
+                " px-[.5rem] ",
                 "max-sm:px-[0.5rem]"
             )}> 
             <p className={clsx(
-                "text-left text-eco-brown font-[800] text-[1rem]  ",
+                "text-left text-eco-brown font-[700] text-lg-desc  ",
                 "whitespace-nowrap overflow-hidden text-ellipsis [mask-image:linear-gradient(to_right,black_80%,transparent)]"
 
-            )}>{prod.title}</p>
-            <div className={clsx(
-                " w-full flex items-baseline justify-between",
-                "max-sm-sm:flex-col max-sm-sm:gap-[0.5rem] max-sm-sm:pb-[0.6rem]"
-            )}>
-                <p className="text-pri-green font-[800] text-[1.2rem] ">${prod.price}</p>
-                <p className="px-[.5rem] text-[0.875rem] bg-off-white text-tetirary-grey rounded-full text-nowrap text-ellipsis">{prod.tag }</p>
-            </div>
+            )}>{prod.title}</p>            
+            <p className="text-pri-green font-[700] text-sm-desc text-left ">${prod.price}</p>                
+            
             </div>
         </Card>
     )

@@ -76,20 +76,25 @@ export default  function Products() {
   
   return (
     <div className={clsx(
-      "max-w-[80rem] mx-auto px-8 py-[6rem] text-center ",
+      "w-full mx-auto px-4 py-[3rem] text-center ",
       "max-md:px-4",
-      "max-sm:px-6"
+      "max-sm:px-3"
       )}>
         <div>
-          <h1 className="text-[2.25rem] text-eco-brown font-extrabold">Our Product Catalog</h1>
-          <p className="mx-auto max-w-3xl text-[1.125rem] text-gray-600 ">Browse our comprehensive selection of agricultural products designed to meet all your farming needs.</p>
+          <h1 className="text-lg-head text-eco-brown font-extrabold">Our Product Catalog</h1>
+          <p className={clsx(
+            "mx-auto max-w-3xl text-lg-desc text-gray-600",
+            "max-sm:text-sm-desc"
+          )}>Browse our comprehensive selection of agricultural products designed to meet all your farming needs.</p>
         </div>
         <div className="w-full flex flex-col items-center justify-center">
-          <p className="w-full mb-[1.5rem] text-[1.125rem] text-eco-brown text-left font-extrabold">{filteredProds.length} Products Found</p>        
+          
             { loading ? loading
               :  
               <>
-              <div className=" w-full p-6  flex  gap-4">
+              <div className={clsx(
+                "w-full p-6  flex flex-col gap-4",                
+              )}>
                 <div className={clsx(
                   "w-fit",
                   ""
@@ -106,7 +111,7 @@ export default  function Products() {
                   </div>
                 </div>
 
-                <div className="md:w-64">
+                <div className="w-fit">
                   <select
                     value={selectedCat}
                     onChange={(e) => setSelectedCat(e.target.value)}

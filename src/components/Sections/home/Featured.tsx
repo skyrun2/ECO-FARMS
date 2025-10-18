@@ -34,7 +34,7 @@ export  const FeaturedProduct =  () =>{
     
       useEffect(()=>{
         getProds()
-        .then((data)=>setProds(data))
+        .then((data)=>setProds(data.splice(0,4)))
         .catch((err)=> console.error(err))
         .finally(()=>setLoading(false));
       },[])
@@ -44,11 +44,11 @@ export  const FeaturedProduct =  () =>{
       
     return(
         <section id="Featured"  className={clsx(
-            "py-24  px-8 max-w-7xl mx-auto bg-light text-eco-brown flex flex-col justify-center items-center",
+            "py-24  px-8 w-full mx-auto bg-white text-eco-brown flex flex-col justify-center items-center",
             "max-md:py-16 max-md:px-4",
             "max-sm:px-6")}>
-            <p className="text-center text-[2.25rem] font-[800]">Featured Products</p>
-            <p className=" text-center text-sec-grey text-[1.125rem]">Discover our most popular products trusted by farmers and agricultural businesses.</p>
+            <p className="text-center text-[1.25rem] font-[800]">Featured Products</p>
+            <p className=" text-center text-sec-grey text-[.95rem]">Discover our most popular products trusted by farmers and agricultural businesses.</p>
             <ProdsList prods={prods}/>
             <div className="w-full flex  justify-center">
                 <Link href="/Products">

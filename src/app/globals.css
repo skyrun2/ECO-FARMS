@@ -59,7 +59,11 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-mono: var(--font-geist-mono);  
+  --text-lg-head: 1.2rem;
+  --text-sm-head: 1rem;
+  --text-lg-desc: .95rem;
+  --text-sm-desc: .75rem;
   --color-pri-green: var(--pri-green);
   --color-hover-green: var(--hover-green);
   --color-eco-brown: var(--eco-brown);

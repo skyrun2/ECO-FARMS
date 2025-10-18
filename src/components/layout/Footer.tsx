@@ -66,18 +66,18 @@ const Footer = () =>{
                     "grid grid-cols-3 gap-[2rem]",
                     "max-md:grid-cols-1",
                 )}>
-                    <div className="space-y-[1rem]">
+                    <div className="flex flex-col gap-2">
                         <div className="flex items-center space-x-[.5rem]">
                             <span>
                             <Wheat className="text-pri-green w-[1.5rem] "/>
                             </span>
-                            <p className="text-[1.125rem] font-[700] text-light">ECO-FARMS</p>
+                            <p className="text-[1.2rem] font-[700] text-light">ECO-FARMS</p>
                         </div>
-                        <p className=" text-gray-300">{footerDetails.desc}</p>
+                        <p className=" text-sm text-gray-300">{footerDetails.desc}</p>
                     </div>                    
-                    <div className="f-links space-y-[1rem]">
-                        <p className="text-[1.125rem] text-white font-[700]">Quick Links</p>
-                        <div className=" text-gray-300 [&>a:hover]:text-hover-green grid grid-cols-1">
+                    <div className="flex flex-col gap-2">
+                        <p className="text-sm text-white font-[700]">Quick Links</p>
+                        <div className=" text-sm text-gray-300 [&>a:hover]:text-hover-green grid grid-cols-1">
                             <Link href="">Products</Link>
                             <Link href="">About</Link>
                             <Link href="">Contact</Link>
@@ -86,8 +86,8 @@ const Footer = () =>{
                     </div>
                     <ContactList user="footer" contacts={footerDetails.contacts}/>
                 </div>
-                <div className=" mt-[2rem] f-btm border-t-[1px] border-gray-600 w-full h-[5rem]  text-gray-300">
-                    <p className="mt-[.5rem]">&copy;{footerDetails.cc}</p>
+                <div className=" mt-[2rem] f-btm border-t-[1px] border-gray-300 w-full h-[5rem]  text-gray-300 ">
+                    <p className="mt-[.5rem] text-sm">&copy;{footerDetails.cc}</p>
 
                 </div>
             </div>

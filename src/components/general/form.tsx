@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -20,14 +19,14 @@ import clsx from "clsx"
 import { Send } from "lucide-react"
  
 const formSchema = z.object({
-    fullName: z.string().min(2,{message:"name must be atleast three characters long"}),
-    email: z.email(),
+    fullName: z.string().min(2,{message:"name must be at least three characters long"}),
+    phoneNumber: z.string(),
     message: z.string()
 
 })
 type FormValues = z.infer<typeof formSchema>;
 
-export type FormName ="fullName"|"email"|"message";
+export type FormName ="fullName"|"phoneNumber"|"message";
 export type MessageFormProps = {
   names : FormName[];
   placeholders: Record<string,string>;
@@ -38,7 +37,7 @@ export function MessageForm({names,placeholders,labels}:MessageFormProps){
       resolver: zodResolver(formSchema),
       defaultValues: {
           fullName:"",
-          email:"",
+          phoneNumber:"",
           message:"",
       }
   })
@@ -50,31 +49,27 @@ export function MessageForm({names,placeholders,labels}:MessageFormProps){
   
   return(
         <Form {...form} >
-    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+    <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-8">
       {names.map((e,i)=>{
         return(
           <FormField
           control={form.control}
-          name = {e}
+          name = {e}          
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-eco-brown text-sm font-bold">{labels[e]}</FormLabel>
+              <FormLabel className="text-lg-desc text-eco-brown  font-bold">{labels[e]}</FormLabel>
               <FormControl className={clsx(
                 "px-4 py-3 w-full  border border-gray-300 rounded-lg focus:ring-2 focus:ring-pri-green focus:border-transparent text-lg"
               )}>
                 { e =="message" ?
-                  <Textarea className="h-[12.125rem]" placeholder={placeholders[e]} {...field} />
-                  : <Input className="h-[3.375rem]" placeholder={placeholders[e]} {...field} />
+                  <Textarea className="h-[12.125rem] text-sm-desc placeholder:text-sm-desc" placeholder={placeholders[e]} {...field} />
+                  : <Input className="h-[3.375rem] text-sm-desc placeholder:text-sm-desc" placeholder={placeholders[e]} {...field} />
                 }
-                {/* { e !="message" &&
-                  <Input className="h-[3.375rem]" placeholder={placeholders[e]} {...field} />
-                } */}
+                
 
                 
               </FormControl>
-              {/* <FormDescription>
-                Your message will be submited with this name
-              </FormDescription> */}
+              
               <FormMessage/>
             </FormItem>                        
           )}
@@ -88,7 +83,7 @@ export function MessageForm({names,placeholders,labels}:MessageFormProps){
 
       <Button 
       className={clsx(
-        " px-6 py-4 w-full h-[3.75rem] bg-pri-green text-white  rounded-lg font-bold  text-lg hover:bg-hover-green transition-colors flex items-center justify-center space-x-2"
+        " px-6 py-4 w-full h-[3.75rem] bg-pri-green text-lg-desc text-white  rounded-lg font-bold   hover:bg-hover-green transition-colors flex items-center justify-center space-x-2"
       )}
       type="submit">
         <Send/>

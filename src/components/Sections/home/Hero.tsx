@@ -21,19 +21,23 @@ export const Hero = ()=>{
                 "max-sm:px-6"
                 )}>
                 <h1 className={clsx(
-                    "text-[3.75rem] font-[800] mb-[1.5rem",
-                    "max-sm:text-[2.5rem]"
+                    "text-4xl font-[800] mb-[1.5rem]",
+                    "max-md:text-4xl"
                 )}>{heroContent.title}</h1>
                 <p className={clsx(
-                    "text-[1.5rem] font-[700] mb-[1rem]",
+                    "text-2xl font-[700] mb-[1rem]",
+                    "max-md:text-sm-desc"
                 )}>{heroContent.catchphrase}</p>
                 <p className={clsx(
-                    "max-w-[48rem] mx-auto mb-[2rem] text-center text-[1.15rem] font-normal opacity-90",
-                    "max-md:text-[1.25rem]"
+                    "max-w-[48rem] mx-auto mb-[2rem] text-center text-lg-desc font-normal opacity-90",
+                    "max-md:text-sm-desc"
                 )}>{heroContent.desc}</p>
                 
                     <Link href="/Products" className=" ">
-                        <Button className=" h-[3.5rem] w-[15rem] bg-eco-yellow hover:bg-hv-eco-yellow text-sec-color text-[1.125rem] font-[800] cursor-pointer" >
+                        <Button className={clsx(
+                            " h-[3.5rem] w-[15rem] bg-eco-yellow hover:bg-hv-eco-yellow text-sec-color text-lg-desc font-[800] cursor-pointer",
+                            "max-sm:text-sm-desc"
+                        )} >
                             <p>Shop Product</p>
                             <RightArrow/>
                         </Button>

@@ -9,12 +9,12 @@ import { Clock } from "lucide-react";
 
 const placeholders ={
   fullName:"Enter Your full name",
-  email: "Enter Your EmailAddress",
+  phoneNumber: "Enter Your phone number",
   message: " Tell us about your needs or questions"
 }
 const labels = {
     fullName:"Full Name *",
-    email: "Email Address *",
+    phoneNumber: "Phone Number *",
     message: "Message *"
 }
 
@@ -22,53 +22,55 @@ const labels = {
 export default function Contact(){
     return(
         <section className={clsx(
-            "mx-auto px-8 py-[6rem] max-w-[80rem] ",
-            "max-lg:py-[4rem]",
-            "max-md:py-6",
+            "mx-auto px-8 py-[3rem] max-w-[80rem] ",
+            "max-lg:py-[4rem]",            
             "max-sm:px-4"
         )}>
             <div className="mb-16 text-center">
                 <h1 className={clsx(
-                    " mb-4 text-4xl  font-extrabold  text-eco-brown ",
-                    "max-md:text-3xl "
+                    " mb-4 text-lg-head  font-extrabold  text-eco-brown ",
+                    
                 )}>Get In Touch</h1>
                 <p className={clsx(
-                    "mx-auto max-w-3xl text-lg text-gray-600 "
+                    "mx-auto max-w-3xl text-lg-desc text-gray-600 ",
+                    "max-sm:text-sm-desc"
                 )}>We&apos;re here to help with all your agricultural needs. Contact us today to learn more about our products and services.</p>
             </div>            
             <div className={clsx(
                 "grid  grid-cols-2 gap-12",
                 "max-md:grid-cols-1"
             )}>
-                <div className="p-8 bg-white rounded-xl shadow-lg ">
+                <div className="p-8 bg-white rounded-xl shadow-lg border">
                     <h2 className={clsx(
-                        "mb-6 text-2xl font-bold  text-eco-brown ",
-                        "max-sm:text-[1.25rem]"
+                        "mb-6 text-lg-head font-bold  text-eco-brown ",
+                        
                     )}>Send Us a Message</h2>
-                    <MessageForm names={["fullName","email","message"]} placeholders={placeholders} labels={labels}/>
+                    <MessageForm names={["fullName","phoneNumber","message"]} placeholders={placeholders} labels={labels}/>
                 </div>
                 <div className="space-y-8">
                     <Card className="p-8 flex flex-col  bg-white rounded-xl shadow-lg">
                         <h2 className={clsx(
-                            "mb text-2xl font-bold text-eco-brown",
-                            "max-sm:text-[1.25rem]"
+                            "mb text-[1.2rem] font-bold text-eco-brown",
+                            
                         )}>Contact Information</h2>
                         <ContactList user="contact" contacts={contacts}/>
                     </Card>
-                    <Card className="p-8 bg-white rounded-xl shadow-lg">
+                    <Card className=" p-8  bg-white rounded-xl shadow-lg gap-4">
                         <h2 className={clsx(
-                            " text-2xl font-bold text-eco-brown",
-                            "max-sm:text-[1.25rem]"
+                            " text-[1.2rem] font-bold text-eco-brown",
+                            
                         )}>Business Hours</h2>
-                        <div className="grid grid-cols-[1fr_3fr] items-start space-x-4">
-                            <span className=" w-12 h-12 bg-pri-green  rounded-full flex items-center justify-center text-white" >
-                                <Clock/>
-                                </span>
-                                <div className="text-gray-600">
-                                    <p>Monday - Friday: <span>7:00 AM - 6:00 PM</span></p>
-                                    <p>Saturday: <span>8:00 AM - 4:00 PM</span></p>
-                                    <p>Sunday: <span>Closed</span></p>
-                                </div>
+                        <div  className="flex gap-4 items-center ">
+                            <span className=" bg-pri-green w-[2rem] aspect-square flex items-center justify-center rounded-full">  
+                                <Clock className="aspect-square text-white" 
+                                width="1rem"
+                                />
+                            </span>
+                            <div className="text-gray-600 text-sm">
+                                <p>Monday - Friday: <span>7:00 AM - 6:00 PM</span></p>
+                                <p>Saturday: <span>8:00 AM - 4:00 PM</span></p>
+                                <p>Sunday: <span>Closed</span></p>
+                            </div>
                         </div>
                     </Card>
                 </div>

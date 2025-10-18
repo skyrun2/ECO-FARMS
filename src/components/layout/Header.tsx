@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { Button } from "../ui/button";
-import {Heart, LucideProps, Menu, Wheat, X } from "lucide-react";
-import Favourite from "../icons/Favourite";
+import {Heart, Menu, Wheat, X } from "lucide-react";
 import clsx from "clsx";
-import { SVGProps, useState } from "react";
+import { SVGProps, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { getProds } from "@/utils/handleProds";
+import { useUserStore } from "@/lib/useUserStore";
 
 
 type NavLinks = {
@@ -31,17 +32,21 @@ const navLinks :NavLinks[] = [
         link:"Contact",
         text:"Contact",
     },
-    {
-        link:"Favourites",
-        text:"Favourites",
-        icon: Heart,
-    }
+    
 ]
 
 export {Header};
 
 const Header = () =>{
     const [isOpen, setIsOpen] = useState(false);
+    const [favCount, setFavCount] = useState<number>(0);
+    const pathname = usePathname();
+    const favProds = useUserStore((state)=>state.favProds)
+
+
+    useEffect(()=>{
+        setFavCount(favProds.length);
+    },[favProds])
     return (
         <>
             <nav className="sticky top-0 z-40  bg-pri-green  w-[100%]  shadow-lg ">
@@ -52,26 +57,48 @@ const Header = () =>{
                 )}>
                     <div className="h-[4rem] flex items-center justify-between">
                         <LogoLink/>
-                        {/* DESKTOP MODE */}
-                        <li className={clsx(
-                            " flex justify-between items-center  space-x-[2rem]",
-                            "max-mb-nav:hidden"
-                        )}>
-                            <HeaderLinks/>
-                        </li>
-                        <Button className={clsx(
-                            "hidden",
-                            " aspect-square w-[2rem] max-mb-nav:flex items-center hover:bg-transparent shadow-none hover:text-eco-brown",
-                        )} onClick={()=>setIsOpen(!isOpen)}>
-                            {isOpen
-                            ? <X/>
-                            : <Menu/>  }
-                        </Button>
+                        <div className=" w-fit  flex items-center justify-between gap-8">
+                            {/* DESKTOP MODE */}
+                            <li className={clsx(
+                                " flex justify-between items-center  space-x-[2rem]",
+                                "max-mb-nav:hidden"
+                            )}>
+                                <HeaderLinks/>
+                            
+                            </li>
+
+                            {/* FAVORITES LINK*/}
+                            <Link href="Favorites" className={clsx(
+                                "relative  w-[1.5rem] aspect-square cursor-pointer text-[0.875rem] shadow-none  rounded-md text-sm font-medium flex items-center justify-center",                                
+                                pathname !=="/Favorites" && "hover:bg-hover-green"
+                            
+                            )}>
+                                { favCount?
+                                    <p className="absolute top-[-90%] translate-y-[50%] right-0 text-white font-bold text-sm-desc ">{favCount}</p>
+                                    : null
+                                }
+                                <Heart className={clsx(
+                                    "  aspect-square",
+                                    pathname=="/Favorites" ? " fill-eco-brown text-eco-brown" : " text-white"
+                                )} height="1.2rem"  />
+                            </Link>
+
+                            {/* CTRL BTN FOR MOBILE MODE */}
+                            <Button className={clsx(
+                                "hidden",
+                                "  p-0  max-mb-nav:w-[3rem] aspect-square max-mb-nav:flex items-center justify-center hover:bg-transparent  hover:text-eco-brown",
+                            )} onClick={()=>setIsOpen(!isOpen)}>
+                                {isOpen
+                                ? <X />
+                                : <Menu />  }
+                            </Button>
+
+                            
+                        </div>
                     </div>
                         {/* MOBILE MODE */}
                     <li className={clsx(
-                        "px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-pri-green ",
-                        "max-sm:px-3",
+                        " pt-0  bg-pri-green ",                        
                         "hidden",
                         isOpen &&  "max-mb-nav:flex max-mb-nav:flex-col "
                     )}>
@@ -89,10 +116,7 @@ export interface HeaderLinkProps {
 
 }
 const HeaderLinks = ({className="",isOpen} : HeaderLinkProps) =>{
-        const pathname = usePathname();
-        
-        
-                
+        const pathname = usePathname();                                
     return(
         <>
             {
@@ -103,17 +127,14 @@ const HeaderLinks = ({className="",isOpen} : HeaderLinkProps) =>{
                     return(
                         <Link key={i} href={href}>
                             <Button className={clsx(
-                                "hover:bg-hover-green  cursor-pointer text-[0.875rem] shadow-none space-x-1 px-3 py-2 rounded-md text-sm font-medium ",
+                                "hover:text-eco-brown hover:bg-transparent  cursor-pointer text-sm-desc text-white shadow-none space-x-1 px-3 py-2 rounded-md  font-medium ",
                                 e.icon && "flex items-center",
-                                isCurrPage && "bg-eco-brown hover:bg-eco-brown hover:text-pri-green",
+                                isCurrPage && "text-eco-brown",
                                 isOpen && "max-mb-nav:w-full",
                                 className
 
-                            )}>
-                                {e.icon && <e.icon className=""/>}
-                                <p className={clsx(
-                                    "text-left w-full"
-                                )}>{e.text}</p>
+                            )}>                            
+                                <p className="text-sm-desc">{e.text}</p>                                                                
                             </Button>
                         </Link>
                     )
@@ -135,7 +156,10 @@ export const LogoLink = ({className}:LogoLinkProps) =>{
                     className
                 )}>
                     <Wheat className="aspect-square w-[2rem]"/>
-                    <p className="text-[1.2rem]  font-bold">ECO-FARMS</p>
+                    <p className={clsx(
+                        "text-lg-desc  font-bold",
+                        "max-sm:text-sm-desc"
+                    )}>ECO-FARMS</p>
                 </Button>
             </Link>
         </>
