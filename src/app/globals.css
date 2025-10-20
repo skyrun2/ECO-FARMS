@@ -176,22 +176,44 @@
   background-position: center center;
 }
 
+/* theme */
 
-/* .prods-list{
-  background-color: #0000;
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(auto,23.5%));
-  grid-gap: 0 2%;
-  gap: 0 2%;
-  justify-items: start;
-  width: 100%;
+.panel {    
+  transition: all 200ms linear;
 }
-.prod{
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 80px;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  padding: 16px;
-} */
+
+
+/* mechanism */
+
+.panel-collapse {
+  display: grid;
+  grid-template-rows: 0fr;  
+  
+}
+
+.panel-expand {
+  display: grid;
+  grid-template-rows: 1fr;   
+}
+
+.panel-expand__content {
+  overflow: hidden;
+}
+.light-shim{
+    background: linear-gradient(-45deg, #eee 40%, #fafafa 50%, #eee 60%) ;
+}
+.dark-shim{
+  background: linear-gradient(-45deg, #99a1af 40%, #fafafa 50%, #99a1af 60%) ;
+}
+.shim {
+  background-size: 300%;  
+  background-position-x: 100%;
+  animation: shimmer 1s infinite linear;
+  /* height: 20rem; */
+}
+    
+   @keyframes shimmer {
+   to {
+      background-position-x: 0%
+   }
+}

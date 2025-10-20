@@ -97,13 +97,14 @@ const Header = () =>{
                         </div>
                     </div>
                         {/* MOBILE MODE */}
-                    <li className={clsx(
-                        " pt-0  bg-pri-green ",                        
-                        "hidden",
-                        isOpen &&  "max-mb-nav:flex max-mb-nav:flex-col "
-                    )}>
-                        <HeaderLinks isOpen=""/>
-                    </li>
+                    <div className={isOpen?"panel panel-expand":"panel panel-collapse overflow-hidden"}>
+                        <ul className={clsx(
+                            " pt-0  bg-pri-green grid  grid-cols-1",
+                            "panel-expand__content "
+                        )}>
+                            <HeaderLinks  isOpen="" className="w-fit"/>
+                        </ul>
+                    </div>
                 </div>
             </nav>
         </>

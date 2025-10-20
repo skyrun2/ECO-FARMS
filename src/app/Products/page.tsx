@@ -1,5 +1,7 @@
 'use client'
+import { LoadingProds } from "@/components/general/loadingProds";
 import { ProdsList } from "@/components/general/PodsList";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import useDebounce from "@/hooks/useDebounce";
 import { Product } from "@/lib/types";
@@ -8,7 +10,7 @@ import { getProds } from "@/utils/handleProds";
 
 
 import clsx from "clsx";
-import { Search } from "lucide-react";
+import { ChevronDown, Filter, Search } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default  function Products() {
@@ -70,7 +72,7 @@ export default  function Products() {
     }
   },[debounceSearch])
 
-  if (loading) return <p>loading...</p>;
+  
    
   
   
@@ -89,17 +91,18 @@ export default  function Products() {
         </div>
         <div className="w-full flex flex-col items-center justify-center">
           
-            { loading ? loading
+            { loading ? <LoadingProds/>
               :  
               <>
               <div className={clsx(
-                "w-full p-6  flex flex-col gap-4",                
+                "w-full p-6  flex gap-4",              
+                "flex-col"
               )}>
                 <div className={clsx(
                   "w-fit",
                   ""
                 )}>
-                  <div className=" bg-white relative rounded-lg">
+                  <div className=" w-[20rem] bg-white relative rounded-lg">
                     <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                     <Input
                       type="text"
@@ -110,28 +113,49 @@ export default  function Products() {
                     />
                   </div>
                 </div>
+                <div className=" cats-ctrl relative w-fit  ">
+                  <Button className={clsx(
+                  "panel absolute left-0 w-fit h-[2rem] gap-0 bg-transparent text-gray-600 cursor-pointer ",
+                  "flex flex-col gap-[0rem] items-start justify-start",
+                  "hover:bg-transparent hover:text-pri-green",                  
+                  "cats z-70 hover:h-[15rem]   [&>.select]:hidden [&>.select]:h-0 hover:[&>.select]:flex hover:[&>.select]:h-[10rem]",
+                  selectedCat !== 'all' ? "  ":""
+                  )}>
+                    <div className="flex items-center justify-center gap-[2rem]">
+                      {selectedCat !== 'all' ? <p>{selectedCat} </p>:null}
+                      <div className="flex">
+                        <span><Filter/></span>
+                        <span className="down transition-[all_5000ms_linear]"><ChevronDown/></span>
+                      </div>
+                    </div>  
+                    <div                                        
+                  className={clsx(
+                  " select w-fit h-fir  px-3 py-2 ",
+                  " bg-white border border-input  rounded-md text-sm text-gray-600 text-left",
+                  "flex flex-col gap-2",
+                  " panel  overflow-hidden"
 
-                <div className="w-fit">
-                  <select
-                    value={selectedCat}
-                    onChange={(e) => setSelectedCat(e.target.value)}
-                    className="w-full h-10 px-3 py-2 border border-input bg-background rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                  >
-                    <option value="all">All Categories</option>
-                    {cats.map((category,i) => (
-                      <option key={i} value={category}>
-                        {category}
-                      </option>
-                    ))}
-                  </select>
-                </div>    
-              </div>             
-              <ProdsList prods={filteredProds}/> 
-              </>  
-            }
-            
-            
+                )}
+                >
+                  <option value="all"
+                  className="hover:text-pri-green"
+                  onClick={()=>setSelectedCat("all")}
+                  >All Categories</option>
+                  {cats.map((category,i) => (
+                    <option key={i} value={category} className="hover:text-pri-green"
+                    onClick={()=>setSelectedCat(category)}
+                    >
+                      {category}
+                    </option>
+                  ))}
+                  </div>                   
+                  </Button>                      
+                </div>                                
+              </div>                            
+              </> 
+            }                        
         </div>
+        <ProdsList prods={filteredProds}/>
      </div>
   );
 }

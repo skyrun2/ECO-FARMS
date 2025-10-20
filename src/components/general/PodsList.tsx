@@ -17,7 +17,7 @@ export const  ProdsList = ( {prods} : ProdsListProps)=>{
     <div
      className={clsx(      
       " mt-[2rem] w-full flex flex-wrap gap-4 ",
-      // "max-md:[grid-template-columns:repeat(auto-fit,minmax(10rem,1fr))]",
+      "max-md:items-center max-md:justify-center ",
       // "max-sm:flex max-sm:flex-cols",      
   )}
   >

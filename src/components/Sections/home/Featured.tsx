@@ -1,6 +1,7 @@
 'use client'
 
 
+import { LoadingProds } from "@/components/general/loadingProds";
 import { ProdsList } from "@/components/general/PodsList";
 import RightArrow from "@/components/icons/RightArrow";
 import { Button } from "@/components/ui/button";
@@ -38,7 +39,7 @@ export  const FeaturedProduct =  () =>{
         .catch((err)=> console.error(err))
         .finally(()=>setLoading(false));
       },[])
-      if (loading) return <p>loading...</p>;
+      
       
     
       
@@ -49,7 +50,9 @@ export  const FeaturedProduct =  () =>{
             "max-sm:px-6")}>
             <p className="text-center text-[1.25rem] font-[800]">Featured Products</p>
             <p className=" text-center text-sec-grey text-[.95rem]">Discover our most popular products trusted by farmers and agricultural businesses.</p>
-            <ProdsList prods={prods}/>
+            
+            {loading?  <LoadingProds/> :  <ProdsList prods={prods}/>}
+            
             <div className="w-full flex  justify-center">
                 <Link href="/Products">
                         <Button className="mt-[2rem] h-[3.75rem] w-[15.2rem] bg-pri-green hover:bg-hover-green cursor-pointer  font-[800] rounded-[.5rem] text-off-white ">

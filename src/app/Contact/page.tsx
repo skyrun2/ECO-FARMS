@@ -4,6 +4,7 @@ import { MessageForm } from "@/components/general/form";
 import { contacts } from "@/components/layout/Footer";
 
 import { Card } from "@/components/ui/card";
+import { APIProvider } from "@vis.gl/react-google-maps";
 import clsx from "clsx";
 import { Clock } from "lucide-react";
 
@@ -73,8 +74,17 @@ export default function Contact(){
                             </div>
                         </div>
                     </Card>
+                    <div>                       
+                    </div>                    
                 </div>
-                
+                 <Card className=" p-0 overflow-hidden">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d3953.8155304776824!2d8.572122!3d7.7029356!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwNDInMDcuOSJOIDjCsDM0JzE5LjYiRQ!5e0!3m2!1sen!2sng!4v1760984945177!5m2!1sen!2sng" 
+                    width="600" height="450" 
+                    style={{border:0}} 
+                    allowFullScreen
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"/>                                    
+                </Card>
             </div>
         </section>
     )

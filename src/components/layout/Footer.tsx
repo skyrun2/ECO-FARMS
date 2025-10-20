@@ -39,7 +39,7 @@ export const contacts : Contact[] = [
         },
         {
             icon: MapPin,
-            contact:"123 Farm Road Agriculture Valley, State 12345", 
+            contact:"Along Yaiykyo Ortom Road", 
             type:"address",
             href:"",
         },
@@ -48,7 +48,7 @@ const footerDetails : FooterDetails = {
     title: "ECO-FARMS",
     desc:"Your trusted partner for quality livestock feeds, fresh meat, and seafood. Serving the agricultural community with premium products.",
     contacts: contacts,
-    cc:" 2025 ECO-FARMS. All rights reserved. | created by skyrun"
+    cc:" 2025 ECO-FARMS. All rights reserved. | powered by skyrun"
 
 }
 export {Footer};

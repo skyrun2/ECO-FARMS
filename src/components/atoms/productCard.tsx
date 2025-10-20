@@ -8,6 +8,7 @@ import { iClick, Product } from "@/lib/types";
 import { useUserStore } from "@/lib/useUserStore";
 import { Heart } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Button } from "../ui/button";
 
 // export const FeaturedProduct = ({productCard}:FeaturedProductProps) =>{
 type ProductCardProps = {
@@ -77,6 +78,12 @@ export const ProductCard = ({prod,className}:ProductCardProps) =>{
             <p className="text-pri-green font-[700] text-sm-desc text-left ">${prod.price}</p>                
             
             </div>
+            <Button className={clsx(
+                "mx-auto h-[2rem] w-[90%] bg-pri-green rounded-md",
+                "hover:bg-white hover:text-pri-green hover:border-2 hover:border-pri-green"
+            )}>
+                <p>Message on Whatsapp</p>
+            </Button>
         </Card>
     )
 }
