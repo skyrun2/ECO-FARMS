@@ -4,7 +4,6 @@ import { MessageForm } from "@/components/general/form";
 import { contacts } from "@/components/layout/Footer";
 
 import { Card } from "@/components/ui/card";
-import { APIProvider } from "@vis.gl/react-google-maps";
 import clsx from "clsx";
 import { Clock } from "lucide-react";
 

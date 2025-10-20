@@ -1,5 +1,4 @@
 import clsx from "clsx"
-import { Card } from "../ui/card"
 import { Heart } from "lucide-react"
 import { Button } from "../ui/button"
 import { cn } from "@/lib/utils"

@@ -1,9 +1,9 @@
 import Link from "next/link";
-import {Tele, Whatsapp, Wheat } from "../icons/index";
+import { Wheat } from "../icons/index";
 
-import { SVGProps } from "react";
+
 import clsx from "clsx";
-import { LucideIcon, LucideProps, Mail, Map, MapPin, MessageCircle, Phone } from "lucide-react";
+import {  Mail,  MapPin, MessageCircle, Phone } from "lucide-react";
 import { Contact, ContactList } from "../general/contactList";
 
 

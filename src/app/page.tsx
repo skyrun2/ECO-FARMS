@@ -5,7 +5,7 @@ import Fishs from "@/components/icons/Fish";
 import Steak from "@/components/icons/Steak";
 
 import { Cat, Categories } from "@/components/Sections/home/Categories";
-import { FeaturedProduct, product } from "@/components/Sections/home/Featured";
+import { FeaturedProduct,  } from "@/components/Sections/home/Featured";
 import { Hero } from "@/components/Sections/home/Hero";
 import { Wheat } from "lucide-react";
 import { useEffect } from "react";

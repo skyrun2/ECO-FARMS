@@ -6,7 +6,6 @@ import {Heart, Menu, Wheat, X } from "lucide-react";
 import clsx from "clsx";
 import { SVGProps, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { getProds } from "@/utils/handleProds";
 import { useUserStore } from "@/lib/useUserStore";
 
 

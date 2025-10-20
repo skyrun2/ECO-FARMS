@@ -8,10 +8,9 @@ import { Button } from "@/components/ui/button";
 import { Product } from "@/lib/types";
 
 
-import { useUserStore } from "@/lib/useUserStore";
+
 import { getProds } from "@/utils/handleProds";
 import clsx from "clsx";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
