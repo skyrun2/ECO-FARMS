@@ -118,7 +118,10 @@ export default  function Products() {
                   "panel absolute left-0 w-fit h-[2rem] gap-0 bg-transparent text-gray-600 cursor-pointer ",
                   "flex flex-col gap-[0rem] items-start justify-start",
                   "hover:bg-transparent hover:text-pri-green",                  
-                  "cats z-70 hover:h-[15rem]   [&>.select]:hidden [&>.select]:h-0 hover:[&>.select]:flex hover:[&>.select]:h-[10rem]",
+                  "cats z-70 hover:h-[15rem] active:h-[15rem]   [&>.select]:hidden [&>.select]:h-0 hover:[&>.select]:flex   hover:[&>.select]:h-[10rem]",
+                  "target:h-[15rem] target:[&>.select]:flex target::[&>.select]:h-[10rem]",
+                  "active:w-[20rem]",
+
                   selectedCat !== 'all' ? "  ":""
                   )}>
                     <div className="flex items-center justify-center gap-[2rem]">

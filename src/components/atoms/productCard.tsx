@@ -9,6 +9,7 @@ import { useUserStore } from "@/lib/useUserStore";
 import { Heart } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
+import { useWhatsApp } from "@/hooks/useWhatsapp";
 
 // export const FeaturedProduct = ({productCard}:FeaturedProductProps) =>{
 type ProductCardProps = {
@@ -25,11 +26,12 @@ type HandleFav ={
 export const ProductCard = ({prod,className}:ProductCardProps) =>{
     const makeFav = useUserStore((state)=>state.actions.makeFav);
     const removeFav = useUserStore((state)=>state.actions.removeFav);
+    const chat = useWhatsApp("message");
     
     const favProds = useUserStore((state)=>state.favProds);
     const [isFav,setFav] = useState(false);        
     
-    const handleFav = ({prod,e}:HandleFav)=>{
+    const handleFav = ({prod}:HandleFav)=>{
         if (isFav) {
             removeFav(prod);
             setFav(false);
@@ -81,7 +83,8 @@ export const ProductCard = ({prod,className}:ProductCardProps) =>{
             <Button className={clsx(
                 "mx-auto h-[2rem] w-[90%] bg-pri-green rounded-md",
                 "hover:bg-white hover:text-pri-green hover:border-2 hover:border-pri-green"
-            )}>
+            )}
+            onClick={()=>chat(`Hi! I\'m interested in the ${prod.title} for ${prod.price}. Is it still available?`)}>
                 <p>Message on Whatsapp</p>
             </Button>
         </Card>

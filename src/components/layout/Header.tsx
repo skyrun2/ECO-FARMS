@@ -101,7 +101,7 @@ const Header = () =>{
                             " pt-0  bg-pri-green grid  grid-cols-1",
                             "panel-expand__content "
                         )}>
-                            <HeaderLinks  isOpen="" className="w-fit"/>
+                            <HeaderLinks  isOpen="" setIsOpen={setIsOpen} className="w-fit"/>
                         </ul>
                     </div>
                 </div>
@@ -113,9 +113,10 @@ const Header = () =>{
 export interface HeaderLinkProps {        
     className?: string;
     isOpen?: string;
+    setIsOpen?: (isOpen:boolean) => void;
 
 }
-const HeaderLinks = ({className="",isOpen} : HeaderLinkProps) =>{
+const HeaderLinks = ({className="",isOpen,setIsOpen} : HeaderLinkProps) =>{
         const pathname = usePathname();                                
     return(
         <>
@@ -125,14 +126,15 @@ const HeaderLinks = ({className="",isOpen} : HeaderLinkProps) =>{
                     let isCurrPage = false;
                     isCurrPage = pathname == href ? true :false;                    
                     return(
-                        <Link key={i} href={href}>
+                        <Link key={i} href={href} 
+                        onClick={setIsOpen ? ()=> setIsOpen(false) : ()=> null }
+                        >
                             <Button className={clsx(
                                 "hover:text-eco-brown hover:bg-transparent  cursor-pointer text-sm-desc text-white shadow-none space-x-1 px-3 py-2 rounded-md  font-medium ",
                                 e.icon && "flex items-center",
                                 isCurrPage && "text-eco-brown",
                                 isOpen && "max-mb-nav:w-full",
                                 className
-
                             )}>                            
                                 <p className="text-sm-desc">{e.text}</p>                                                                
                             </Button>
