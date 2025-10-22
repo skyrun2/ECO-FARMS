@@ -1,5 +1,5 @@
 export const WHATSAPP_CONFIG = {
-  phoneNumber: process.env.NEXT_PUBLIC_WHATSAPP_PHONe || '+2349033753156',
+  phoneNumber: process.env.NEXT_PUBLIC_WHATSAPP_PHONe || '+2348039698827',
   
   // Message templates
   TEMPLATES: {
