@@ -1,11 +1,13 @@
-
+'use client'
 import { ContactList } from "@/components/general/contactList";
 import { MessageForm } from "@/components/general/form";
 import { contacts } from "@/components/layout/Footer";
 
 import { Card } from "@/components/ui/card";
+import { MAP_URL } from "@/lib/constants";
 import clsx from "clsx";
 import { Clock } from "lucide-react";
+import { motion } from "motion/react";
 
 const placeholders ={
   fullName:"Enter Your full name",
@@ -21,7 +23,11 @@ const labels = {
 
 export default function Contact(){
     return(
-        <section className={clsx(
+        <motion.section 
+        initial={{ opacity: 0, y: 40 }}
+        animate={ { opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className={clsx(
             "mx-auto px-8 py-[3rem] max-w-[80rem] ",
             "max-lg:py-[4rem]",            
             "max-sm:px-4"
@@ -77,7 +83,7 @@ export default function Contact(){
                     </div>                    
                 </div>
                  <Card className=" p-0 overflow-hidden">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d3953.8155304776824!2d8.572122!3d7.7029356!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwNDInMDcuOSJOIDjCsDM0JzE5LjYiRQ!5e0!3m2!1sen!2sng!4v1760984945177!5m2!1sen!2sng" 
+                    <iframe src={ MAP_URL} 
                     width="600" height="450" 
                     style={{border:0}} 
                     allowFullScreen
@@ -85,7 +91,7 @@ export default function Contact(){
                     referrerPolicy="no-referrer-when-downgrade"/>                                    
                 </Card>
             </div>
-        </section>
+        </motion.section>
     )
 }
 

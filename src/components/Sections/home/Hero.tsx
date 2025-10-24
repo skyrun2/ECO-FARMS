@@ -2,7 +2,7 @@ import RightArrow from "@/components/icons/RightArrow"
 import { Button } from "@/components/ui/button"
 import clsx from "clsx"
 import Link from "next/link"
-
+import {motion} from  "motion/react"
 const heroContent = {
     title:"ECO FARMS",
     catchphrase:"Your Trusted Agricultural Partner",
@@ -14,13 +14,20 @@ export const Hero = ()=>{
     return(
         <section id="#hero" 
         className="relative pt-[8rem] bg-hero w-full h-[33.6rem]  text-light"
-        >
-            <div className={clsx(
+        >   
+
+                <motion.div
+                initial={{ opacity: 0, y: 40 }}
+            animate={ { opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+                className={clsx(
                 "max-w-[80rem] mx-auto px-8 text-center",
                 "max-md:px-4",
                 "max-sm:px-6"
-                )}>
-                <h1 className={clsx(
+                )}>      
+                
+                <h1  className={clsx(
+                    
                     "text-4xl font-[800] mb-[1.5rem]",
                     "max-md:text-4xl"
                 )}>{heroContent.title}</h1>
@@ -34,18 +41,20 @@ export const Hero = ()=>{
                 )}>{heroContent.desc}</p>
                 
                     <Link href="/Products" className=" ">
-                        <Button className={clsx(
-                            " h-[3.5rem] w-[15rem] bg-eco-yellow hover:bg-hv-eco-yellow text-sec-color text-lg-desc font-[800] cursor-pointer",
+                        <Button  className={clsx(
+                            " h-[3.5rem] w-[15rem]  bg-eco-yellow hover:bg-hv-eco-yellow text-sec-color text-lg-desc font-[800] cursor-pointer",
                             "max-sm:text-sm-desc"
-                        )} >
+                        )} 
+                          >
                             <p>Shop Product</p>
                             <RightArrow/>
                         </Button>
                     </Link>
                     
                 
-            </div>
+            </motion.div>
         </section>
     )
+
 }
 

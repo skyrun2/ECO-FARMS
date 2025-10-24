@@ -1,22 +1,29 @@
 
 import { Card, CardDescription, CardTitle } from "@/components/ui/card"
 import clsx from "clsx";
+import { LucideIcon } from "lucide-react";
+import { motion } from "motion/react";
 
-import { ReactNode } from "react";
+
 
 
 export type Cat = {
     title: string;    
     desc: string;    
-    icon: ReactNode;
+    icon: LucideIcon;
 }
 
 export type CategoriesProp = {
     items:Cat[]
 }
 export const Categories = ({items}:CategoriesProp)=>{
-    return(
-        <section id="cats" className={clsx(
+    
+    return(        
+        <motion.section id="cats"
+        initial={{ opacity: 0, y: 40 }}
+        animate={ { opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className={clsx(
                     "py-24  px-4 w-full mx-auto bg-white text-eco-brown flex flex-col justify-center items-center",
                     "max-md:py-16 max-md:px-4",
                     "max-sm:px-4")}>
@@ -47,7 +54,7 @@ export const Categories = ({items}:CategoriesProp)=>{
                     <span className={clsx("rounded-[100%] aspect-square w-[4rem] flex items-center justify-center text-light",
                             i%2 ? "bg-eco-brown"  : "bg-pri-green",
                     )}>
-                       {e.icon} 
+                       <e.icon/>
                     </span>
                     <CardTitle className="text-lg-head text-eco-brown  font-bold">{e.title}</CardTitle>
                     <CardDescription className="w-full text-lg-desc text-sec-grey text-center  font-normal">{e.desc}</CardDescription>
@@ -55,6 +62,6 @@ export const Categories = ({items}:CategoriesProp)=>{
                 )
             })}
             </div>
-        </section>
+        </motion.section>
     )
 }

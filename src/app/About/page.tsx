@@ -1,75 +1,45 @@
 'use client'
 
 import { Button } from "@/components/ui/button";
+import { ECOFARMS_ABOUT, Value } from "@/lib/constants";
 import clsx from "clsx";
-import { Award, Leaf, LucideIcon, Target, Users } from "lucide-react"
+import { motion } from "motion/react";
+
 import Image from "next/image";
 import Link from "next/link";
-export type Value = {
-    title:string
-    desc:string;    
-    icon:LucideIcon;
-}
-export type AboutData = {
-    desc:string;
-    story:string[];
-    mission:string;
-    values: Value[];
-}
-export const aboutData : AboutData= {
-    desc:"Your trusted partner in agriculture, providing premium livestock feeds, fresh meat, and quality seafood to farming communities across the region.",
-    story:[
-        "Founded with a deep passion for agriculture, AgroFresh began as a small family business dedicated to supporting local farmers with quality products and reliable service. Over the years, we've grown into a trusted name in the agricultural community.",
-        "Our journey started when we recognized the need for a reliable supplier that truly understood the challenges facing modern farmers. We committed ourselves to sourcing the finest livestock feeds, freshest meats, and highest quality seafood products.",
-        "Today, we serve hundreds of farms and agricultural businesses, maintaining the same personal touch and commitment to quality that defined our early days. Our success is measured by the success of our customers and the thriving agricultural community we serve",
-    ],
-    mission:"To empower agricultural communities by providing premium quality products, exceptional service, and expert knowledge that helps farmers and businesses thrive in today's competitive marketplace.",
-    values:[
-        {
-            title:"Quality First",
-            desc:"We source only the highest quality products for our customers, ensuring freshness and nutritional value.",
-            icon:Leaf
-        },
-        {
-            title:"Community Focus",
-            desc:"Supporting local farmers and agricultural communities is at the heart of everything we do.",            
-            icon:Users
-        },
-        {
-            title:"Trusted Expertise",
-            desc:"With years of experience in agriculture, we understand the needs of modern farming operations.",
-            icon:Award
-        },
-        {
-            title:"Sustainable Practices",
-            desc:"We promote environmentally responsible farming practices and sustainable agriculture.",
-            icon:Target
-        },
-        
-    ]
 
 
-}
+
 
 
 export default function About(){
+    const aboutData = ECOFARMS_ABOUT
     return(
-        <section className={clsx(
+        <section 
+            className={clsx(
             "py-[3rem] mx-auto px-[2rem]  max-w-[80rem]",
             "max-sm:px-[1.5rem]"
         )}>
-            <div className=" mb-[4rem] text-center">
+            <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            animate={ { opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className=" mb-[4rem] text-center">
                 <h1 className={clsx(
                     "mb-[1rem] text-lg-head  font-[700] text-eco-brown",                    
                 )}>About Eco-Farm</h1>
                 <p className="w-full mx-auto text-sm-desc text-gray-600">{aboutData.desc}</p>
-            </div>
+            </motion.div>
             <div className={clsx(
                 "space-y-6 mb-[5rem] grid grid-cols-2 gap-[3rem] ",
                 "max-lg:grid-cols-1"
                 
             )}>
-                <div className="w-fit h-full flex flex-col justify-around">
+                <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={ { opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                className="w-fit h-full flex flex-col justify-around">
                     <h2 className={clsx(
                         "text-lg-head font-bold text-eco-brown",                        
                     )}>Our Story</h2>
@@ -82,21 +52,29 @@ export default function About(){
                             )
                         })
                         }</div>
-                </div>
-                <div className="relative min-h-[25rem] rounded-[0.5rem] shadow-lg bg-cover bg-center overflow-hidden"                    
+                </motion.div>
+                <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                animate={ { opacity: 1, x: 0 }}
+                transition={{ duration: 1.5, ease: 'easeOut' }}
+                className="relative min-h-[25rem] rounded-[0.5rem] shadow-lg bg-cover bg-center overflow-hidden"                    
                 >
                     <Image className="w-full h-full"
                         fill
                         src="https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=800" alt="" />
-                </div>
+                </motion.div>
                 
             </div>
-            <div className="mb-[5rem] p-[2rem] px-[1rem] bg-pri-green text-white text-center rounded-[0.5rem] flex flex-col items-center">
+            <motion.div
+            initial={{ opacity: 0, y: 40, x:40 }}
+            animate={ { opacity: 1, y: -40, x:0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="mb-[5rem] p-[2rem] px-[1rem] bg-pri-green text-white text-center rounded-[0.5rem] flex flex-col items-center">
                 <h2 className={clsx(
                     "text-lg-head font-bold"
                 )}>Our Mission</h2>
                 <p className="max-auto max-w-[56rem] text-lg-desc leading-relaxed  ">{aboutData.mission}</p>
-            </div>
+            </motion.div>
             <div className="mb-[5rem] text-center flex flex-col items-center" >
                 <h2 className="mb-[1rem] text-lg-head text-eco-brown font-bold">Our Values</h2>
                 <p className="max-auto max-w-[48rem] text-lg-desc text-gray-600">These core values guide every decision we make and every relationship we build.</p>                

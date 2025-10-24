@@ -11,6 +11,7 @@ import { getProds } from "@/utils/handleProds";
 
 import clsx from "clsx";
 import { ChevronDown, Filter, Search } from "lucide-react";
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 export default  function Products() {
@@ -77,7 +78,11 @@ export default  function Products() {
   
   
   return (
-    <div className={clsx(
+    <motion.div 
+    initial={{ opacity: 0, y: 40 }}
+    animate={ { opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: 'easeOut' }}
+    className={clsx(
       "w-full mx-auto px-4 py-[3rem] text-center ",
       "max-md:px-4",
       "max-sm:px-3"
@@ -159,7 +164,7 @@ export default  function Products() {
             }                        
         </div>
         <ProdsList prods={filteredProds}/>
-     </div>
+     </motion.div>
   );
 }
 

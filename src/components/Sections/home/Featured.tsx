@@ -11,6 +11,7 @@ import { Product } from "@/lib/types";
 
 import { getProds } from "@/utils/handleProds";
 import clsx from "clsx";
+import { motion } from "motion/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -43,7 +44,12 @@ export  const FeaturedProduct =  () =>{
     
       
     return(
-        <section id="Featured"  className={clsx(
+        <motion.section 
+        initial={{ opacity: 0, y: 40 }}
+        animate={ { opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        id="Featured"
+          className={clsx(
             "py-24  px-8 w-full mx-auto bg-white text-eco-brown flex flex-col justify-center items-center",
             "max-md:py-16 max-md:px-4",
             "max-sm:px-6")}>
@@ -60,6 +66,6 @@ export  const FeaturedProduct =  () =>{
                         </Button>
                 </Link>
             </div>
-        </section>
+        </motion.section>
     )
 }
