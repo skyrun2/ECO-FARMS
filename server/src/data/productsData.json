@@ -1,0 +1,332 @@
+[
+  {
+    "id": 1,
+    "name": "Oriental Steel Pizza",
+    "description": "Discover the bat-like agility of our Bacon, perfect for considerate users",
+    "price": 90.59,
+    "category": "Jewelry",
+    "subCategories": [
+      "Granite"
+    ],
+    "image": "https://picsum.photos/seed/wGlCllK1L/400/400?grayscale&blur=7"
+  },
+  {
+    "id": 2,
+    "name": "Soft Metal Mouse",
+    "description": "The Universal system-worthy solution Towels offers reliable performance and weekly design",
+    "price": 137.19,
+    "category": "Sports",
+    "subCategories": [
+      "Metal"
+    ],
+    "image": "https://picsum.photos/seed/WOmzET/400/400?blur=1"
+  },
+  {
+    "id": 3,
+    "name": "Unbranded Wooden Chair",
+    "description": "New yellow Soap with ergonomic design for grumpy comfort",
+    "price": 143.99,
+    "category": "Music",
+    "subCategories": [
+      "Steel"
+    ],
+    "image": "https://picsum.photos/seed/dSAuau/400/400"
+  },
+  {
+    "id": 4,
+    "name": "Handmade Gold Sausages",
+    "description": "Stylish Shirt designed to make you stand out with grave looks",
+    "price": 132.55,
+    "category": "Automotive",
+    "subCategories": [
+      "Marble"
+    ],
+    "image": "https://picsum.photos/seed/y1SsLiYq/400/400?blur=9"
+  },
+  {
+    "id": 5,
+    "name": "Unbranded Plastic Shirt",
+    "description": "Introducing the North Macedonia-inspired Bacon, blending giving style with local craftsmanship",
+    "price": 147.05,
+    "category": "Clothing",
+    "subCategories": [
+      "Wooden"
+    ],
+    "image": "https://picsum.photos/seed/p2VhC/400/400?blur=1"
+  },
+  {
+    "id": 6,
+    "name": "Electronic Rubber Towels",
+    "description": "New plum Tuna with ergonomic design for majestic comfort",
+    "price": 16.86,
+    "category": "Kids",
+    "subCategories": [
+      "Gold"
+    ],
+    "image": "https://picsum.photos/seed/n8y4Yly/400/400?grayscale"
+  },
+  {
+    "id": 7,
+    "name": "Fantastic Bronze Sausages",
+    "description": "New grey Tuna with ergonomic design for oval comfort",
+    "price": 34.85,
+    "category": "Industrial",
+    "subCategories": [
+      "Concrete"
+    ],
+    "image": "https://picsum.photos/seed/zvGVt9axoI/400/400?grayscale&blur=4"
+  },
+  {
+    "id": 8,
+    "name": "Licensed Bronze Salad",
+    "description": "Practical Bacon designed with Silk for ill-fated performance",
+    "price": 129.69,
+    "category": "Automotive",
+    "subCategories": [
+      "Granite"
+    ],
+    "image": "https://picsum.photos/seed/5pwYobDP4/400/400?grayscale&blur=3"
+  },
+  {
+    "id": 9,
+    "name": "Soft Wooden Shirt",
+    "description": "The Future-proofed mission-critical instruction set Mouse offers reliable performance and easy design",
+    "price": 40.05,
+    "category": "Electronics",
+    "subCategories": [
+      "Cotton"
+    ],
+    "image": "https://picsum.photos/seed/dUbgz5lUUw/400/400?blur=8"
+  },
+  {
+    "id": 10,
+    "name": "Unbranded Ceramic Soap",
+    "description": "The Syble Gloves is the latest in a series of hidden products from Terry LLC",
+    "price": 154.15,
+    "category": "Jewelry",
+    "subCategories": [
+      "Metal"
+    ],
+    "image": "https://picsum.photos/seed/HM1wC2rBy/400/400?blur=5"
+  },
+  {
+    "id": 11,
+    "name": "Sleek Ceramic Pizza",
+    "description": "The Abbigail Pizza is the latest in a series of sugary products from Price, Cummerata and DuBuque",
+    "price": 156.99,
+    "category": "Grocery",
+    "subCategories": [
+      "Bronze"
+    ],
+    "image": "https://picsum.photos/seed/uryAs/400/400?grayscale&blur=8"
+  },
+  {
+    "id": 12,
+    "name": "Luxurious Plastic Fish",
+    "description": "Botsford, Hackett and Kemmer's most advanced Bacon technology increases unfinished capabilities",
+    "price": 140.95,
+    "category": "Baby",
+    "subCategories": [
+      "Metal"
+    ],
+    "image": "https://picsum.photos/seed/qGR9GX1/400/400"
+  },
+  {
+    "id": 13,
+    "name": "Elegant Plastic Soap",
+    "description": "The Jaiden Tuna is the latest in a series of physical products from Welch Inc",
+    "price": 128.25,
+    "category": "Home",
+    "subCategories": [
+      "Bamboo"
+    ],
+    "image": "https://picsum.photos/seed/cX4UeVY/400/400?blur=1"
+  },
+  {
+    "id": 14,
+    "name": "Unbranded Cotton Keyboard",
+    "description": "Licensed Bike designed with Wooden for that performance",
+    "price": 87.59,
+    "category": "Outdoors",
+    "subCategories": [
+      "Plastic"
+    ],
+    "image": "https://picsum.photos/seed/30ed7UaZ/400/400?grayscale&blur=2"
+  },
+  {
+    "id": 15,
+    "name": "Handcrafted Cotton Cheese",
+    "description": "Savor the savory essence in our Shirt, designed for unused culinary adventures",
+    "price": 32.25,
+    "category": "Music",
+    "subCategories": [
+      "Silk"
+    ],
+    "image": "https://picsum.photos/seed/Oc9PPeeFE/400/400?blur=7"
+  },
+  {
+    "id": 16,
+    "name": "Gorgeous Silk Chair",
+    "description": "Pacocha - West's most advanced Bacon technology increases incomparable capabilities",
+    "price": 80.09,
+    "category": "Tools",
+    "subCategories": [
+      "Silk"
+    ],
+    "image": "https://picsum.photos/seed/tI4dByJs/400/400?blur=8"
+  },
+  {
+    "id": 17,
+    "name": "Tasty Granite Pizza",
+    "description": "Our bitter-inspired Mouse brings a taste of luxury to your shameless lifestyle",
+    "price": 115.65,
+    "category": "Garden",
+    "subCategories": [
+      "Wooden"
+    ],
+    "image": "https://picsum.photos/seed/qzVbS3zsz/400/400?blur=3"
+  },
+  {
+    "id": 18,
+    "name": "Incredible Wooden Table",
+    "description": "Bode Inc's most advanced Computer technology increases black-and-white capabilities",
+    "price": 123.39,
+    "category": "Clothing",
+    "subCategories": [
+      "Aluminum"
+    ],
+    "image": "https://picsum.photos/seed/2nIkISS/400/400?blur=1"
+  },
+  {
+    "id": 19,
+    "name": "Licensed Concrete Soap",
+    "description": "Conn Group's most advanced Mouse technology increases spiteful capabilities",
+    "price": 23.9,
+    "category": "Grocery",
+    "subCategories": [
+      "Plastic"
+    ],
+    "image": "https://picsum.photos/seed/bpikXz1B/400/400?blur=3"
+  },
+  {
+    "id": 20,
+    "name": "Practical Wooden Cheese",
+    "description": "New fuchsia Sausages with ergonomic design for grown comfort",
+    "price": 134.29,
+    "category": "Home",
+    "subCategories": [
+      "Wooden"
+    ],
+    "image": "https://picsum.photos/seed/cPGDJFajT4/400/400?grayscale&blur=1"
+  },
+  {
+    "id": 21,
+    "name": "Bespoke Concrete Chips",
+    "description": "Fantastic Chips designed with Cotton for glossy performance",
+    "price": 128.59,
+    "category": "Beauty",
+    "subCategories": [
+      "Marble"
+    ],
+    "image": "https://picsum.photos/seed/orhcDx/400/400?grayscale"
+  },
+  {
+    "id": 22,
+    "name": "Ergonomic Concrete Chips",
+    "description": "Our lion-friendly Bacon ensures pointed comfort for your pets",
+    "price": 40.31,
+    "category": "Music",
+    "subCategories": [
+      "Wooden"
+    ],
+    "image": "https://picsum.photos/seed/cXFTZi/400/400?blur=1"
+  },
+  {
+    "id": 23,
+    "name": "Unbranded Gold Chicken",
+    "description": "Innovative Mouse featuring advanced technology and Rubber construction",
+    "price": 178.79,
+    "category": "Clothing",
+    "subCategories": [
+      "Aluminum"
+    ],
+    "image": "https://picsum.photos/seed/TIwOA4/400/400?blur=4"
+  },
+  {
+    "id": 24,
+    "name": "Ergonomic Bronze Soap",
+    "description": "Discover the light new Pants with an exciting mix of Bamboo ingredients",
+    "price": 104.49,
+    "category": "Computers",
+    "subCategories": [
+      "Ceramic"
+    ],
+    "image": "https://picsum.photos/seed/es5W1g0/400/400?grayscale&blur=6"
+  },
+  {
+    "id": 25,
+    "name": "Modern Marble Sausages",
+    "description": "Stylish Soap designed to make you stand out with wretched looks",
+    "price": 54.2,
+    "category": "Baby",
+    "subCategories": [
+      "Ceramic"
+    ],
+    "image": "https://picsum.photos/seed/7FhbW/400/400?grayscale&blur=1"
+  },
+  {
+    "id": 26,
+    "name": "Generic Steel Table",
+    "description": "New Table model with 67 GB RAM, 104 GB storage, and profuse features",
+    "price": 58.19,
+    "category": "Music",
+    "subCategories": [
+      "Gold"
+    ],
+    "image": "https://picsum.photos/seed/8IPZtDD/400/400?blur=4"
+  },
+  {
+    "id": 27,
+    "name": "Bespoke Ceramic Table",
+    "description": "Our flamingo-friendly Keyboard ensures limited comfort for your pets",
+    "price": 115.55,
+    "category": "Games",
+    "subCategories": [
+      "Steel"
+    ],
+    "image": "https://picsum.photos/seed/BcpM3SnKU/400/400?blur=1"
+  },
+  {
+    "id": 28,
+    "name": "Handcrafted Ceramic Table",
+    "description": "Introducing the Puerto Rico-inspired Fish, blending muted style with local craftsmanship",
+    "price": 154.39,
+    "category": "Electronics",
+    "subCategories": [
+      "Silk"
+    ],
+    "image": "https://picsum.photos/seed/Vw5pVDPC/400/400?blur=6"
+  },
+  {
+    "id": 29,
+    "name": "Fresh Cotton Towels",
+    "description": "New Salad model with 30 GB RAM, 298 GB storage, and idealistic features",
+    "price": 101.99,
+    "category": "Sports",
+    "subCategories": [
+      "Gold"
+    ],
+    "image": "https://picsum.photos/seed/8uJkpj/400/400?blur=2"
+  },
+  {
+    "id": 30,
+    "name": "Elegant Granite Fish",
+    "description": "Experience the orange brilliance of our Chips, perfect for unselfish environments",
+    "price": 92.62,
+    "category": "Health",
+    "subCategories": [
+      "Concrete"
+    ],
+    "image": "https://picsum.photos/seed/OityTz/400/400?blur=6"
+  }
+]

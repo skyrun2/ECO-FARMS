@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Handmade"
+    },
+    {
+        "id": 2,
+        "name": "Gorgeous"
+    },
+    {
+        "id": 3,
+        "name": "Ergonomic"
+    },
+    {
+        "id": 4,
+        "name": "Electronic"
+    },
+    {
+        "id": 5,
+        "name": "Bespoke"
+    },
+    {
+        "id": 6,
+        "name": "Practical"
+    },
+    {
+        "id": 7,
+        "name": "Fantastic"
+    },
+    {
+        "id": 8,
+        "name": "Sleek"
+    },
+    {
+        "id": 9,
+        "name": "Soft"
+    },
+    {
+        "id": 10,
+        "name": "Awesome"
+    },
+    {
+        "id": 11,
+        "name": "Unbranded"
+    },
+    {
+        "id": 12,
+        "name": "Licensed"
+    },
+    {
+        "id": 13,
+        "name": "Fresh"
+    },
+    {
+        "id": 14,
+        "name": "Refined"
+    },
+    {
+        "id": 15,
+        "name": "Frozen"
+    }
+]
